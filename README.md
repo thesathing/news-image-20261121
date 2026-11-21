@@ -1,41 +1,48 @@
-# THE WORLD IN ONE DAY — Saturday 21 November 2026 (v2)
+# THE WORLD IN ONE DAY — Saturday 21 November 2026 in one image
 
-[![make.fun · news-image-20261121](https://make.fun/badge/news-image-20261121.svg)](https://make.fun/bounty/news-image-20261121?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
-[![rank](https://make.fun/badge/news-image-20261121/thesathing/news-image-20261121/rank.svg)](https://make.fun/bounty/news-image-20261121/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
-[![reward](https://make.fun/badge/news-image-20261121/thesathing/news-image-20261121/reward.svg)](https://make.fun/bounty/news-image-20261121?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
+[![Rank](https://make.fun/badge/news-image-20261121/thesathing/news-image-20261121/rank.svg)](https://make.fun/bounty/news-image-20261121)
+[![Reward](https://make.fun/badge/news-image-20261121/thesathing/news-image-20261121/reward.svg)](https://make.fun/bounty/news-image-20261121)
 
-make.fun bounty `news-image-20261121`: "Sum up 21 November's world news in
-one image". $100 over 50 places; deadline 23 November 2026 00:00 UTC.
+A one-page newspaper front page that sums up Saturday 21 November 2026 in
+a single image: 36 stories across 7 regions, drawn as original vector art
+with Pillow. No network access, no clock, no unseeded randomness — every
+run writes identical bytes.
 
-## The image
+## What is on the page
 
-One 1024×1024 front page, 36 stories, 7 regions: Russia's overnight barrage
-(400+ drones, 110+ missiles) with missiles landing in Poland; the AI
-sell-off (S&P 500 −3.7% into correction, Nasdaq −5.3%, Nikkei −5.1%);
-COP31 running overtime in Antalya with no fossil-fuel deal; a 6.9 quake in
-Peru's Andes; the FBI database hack; Houthi missiles over Riyadh; Gen Z
-protests in 25 European countries; the daraxonrasib cancer-pill trial;
-Iran downing a US MQ-9 over Hormuz; Indonesia's forest fires; the $7.25bn
-Bayer Roundup settlement; the Basra power-plant fire; the Palisades-fire
-conviction — plus 23 briefs. v2 is the v1 page with one isolated change:
-briefs 31–34 now cover Africa and Oceania (Johannesburg, Blantyre, Cook
-Islands, Melbourne), so every region is represented. A DATE CHECK box keeps
-19 Nov stories (Shenzhen summit, Anthropic debut, ICJ Rohingya verdict,
-GTA VI launch, Senate Iran vote) out of the day's news.
+- **Leads:** COP31 runs overtime in Antalya · Houthis fire on Riyadh,
+  three intercepted · 6.7 quake shakes Peru's Andes (USGS magnitude 6.7).
+- **Features:** Kryvyi Rih double-tap (2 killed, 42 hurt) · FBI database
+  reportedly hacked · Air Niugini 767 emergency landing at Davao, all 146
+  safe · Gen Z protests in 25 European countries · cancer pill trial ·
+  Iran downs a US MQ-9 · Indonesia forest fires · Bayer $7.25bn deal ·
+  Malawi fuel crisis · Cyclone Xavier.
+- **23 more stories** in the briefs column, plus a world map with 13 pins
+  and a DATE CHECK box that names the big stories that are *not* 21 Nov
+  news (Thursday 19 Nov items, and Friday 20 Nov items such as Wall
+  Street's fall into correction, the Kyiv bridge barrage and the Poland
+  missile).
+
+## Region tally (36 stories)
+
+Pictured 13 — EUROPE 4 (COP31, Kryvyi Rih, Berlin, London), AMERICAS 3
+(Peru, Washington, United States), MIDEAST 2 (Riyadh, Hormuz),
+ASIA-PACIFIC 2 (Davao, Indonesia), AFRICA 1 (Malawi), OCEANIA 1 (Xavier).
+Briefs 23 — EUROPE 5 (Madrid, Copenhagen, Kerch, Brussels, Turin),
+AMERICAS 5 (Port-au-Prince, Washington ×2, Caracas, Cleveland),
+ASIA-PACIFIC 3 (India, Pyongyang, Dhaka), MIDEAST 3 (Hormuz, Gaza,
+Baghdad), AFRICA 2 (Johannesburg, Blantyre), OCEANIA 2 (Cook Islands,
+Melbourne), WORLD 3 (Riemann hypothesis, Las Vegas GP, Kyiv fertiliser
+plant). Totals: EUROPE 9, AMERICAS 8, ASIA-PACIFIC 5, MIDEAST 5,
+AFRICA 3, OCEANIA 3, WORLD 3 = 36.
 
 ## Build
 
 ```sh
-python3 poster/build_poster_v2.py   # writes entry.png (PIL only)
+python3 poster/build_poster_v4.py   # writes entry.png (1024x1024, <=1 MiB)
 ```
 
-## Determinism
-
-The builder uses only seeded randomness and fixed fonts
-(Liberation, `/usr/share/fonts/truetype/liberation`); three consecutive
-runs produce byte-identical PNGs, and `main.ts` run twice to two
-directories produces identical bytes. `main.ts` copies `entry.png` to
-`$MAKEFUN_OUTPUT_DIR` (default `/output`) and touches no network.
+Then run `main.ts` to copy `entry.png` into `$MAKEFUN_OUTPUT_DIR`.
 
 ## License
 
